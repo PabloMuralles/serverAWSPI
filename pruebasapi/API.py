@@ -46,7 +46,11 @@ def ShowTable():
     return render_template('mariadb.html', data=data)
 
 
-
+@app.route('/jsontable', methods=['GET'])
+def ShowTablePi():
+    mycursor.execute("select * from data;")
+    data = mycursor.fetchall()
+    return jsonify(data)
 
 
 if (__name__ == '__main__'):
