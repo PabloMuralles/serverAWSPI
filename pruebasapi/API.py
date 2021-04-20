@@ -1,8 +1,9 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 import requests
 import mysql.connector
 from datetime import datetime
 from datetime import date
+#from json2html import * 
 
 db = mysql.connector.connect(
     host='localhost',
@@ -39,11 +40,10 @@ def index():
 
 
 @app.route('/showtable', methods=['GET'])
-
 def ShowTable():
     mycursor.execute("select * from data;")
     data = mycursor.fetchall()
-    return render_template('template.html', data=data)
+    return render_template('mariadb.html', data=data)
 
 
 
