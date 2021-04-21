@@ -9,7 +9,7 @@ def index():
         tempJson = request.get_json()
         print(tempJson) 
         if (tempJson['20'] == '1'):
-            num = '11110011'
+            num = '1111001'
             return jsonify({'num':('{}'.format(num))}), 201
         else:
             return jsonify({'Respuesta':'No hacer nada'})
