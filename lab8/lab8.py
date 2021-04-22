@@ -7,9 +7,9 @@ app = Flask(__name__)
 def index():
     if(request.method == 'POST'):
         tempJson = request.get_json()
-        print(tempJson) 
+        #print(tempJson) 
         if (tempJson['20'] == '1'):
-            num = '1111111'
+            num = '1100101'
             return jsonify({'num':('{}'.format(num))}), 201
         else:
             return jsonify({'Respuesta':'No hacer nada'})
