@@ -4,10 +4,10 @@
  <title></title>
 </head>
 <body>
-    <form method ="POST" action="/">
-        <label for="firstname">Insert:</label>
-        <input type="text" id="status" name="onoff" placeholder="status">
-        <button type="submit" name="submit_a" value="submit_a"> Submit_a </button>
-    </form> 
+    <form action="{{ url_for("page")}}" method="post">
+        <label for="Ingrese">Ingrese Data:</label>
+        <input type="text" id="info" name="finfo" placeholder="">
+        <button type="submit">Enviar</button>
+    </form>
 </body>
 </html>
