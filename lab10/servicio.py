@@ -6,6 +6,7 @@ data = {}
 #open = False
 saveInfo = False
 numPage = 0
+numBinaryPage = 0
 
 app = Flask(__name__)
 
@@ -18,7 +19,8 @@ def index():
         numBinary = tempJson['num']
         numDecimal = int(numBinary,2)
         print(numDecimal)
-        global data, saveInfo
+        global data, saveInfo,numBinaryPage
+        numBinaryPage = tempJson['num']
         saveInfo = True
         while True:
             if (bool(data) != False ):
@@ -49,7 +51,7 @@ def page():
             numPage = int(tempData)
         return ('',204)
     else:
-        return render_template("page.html"), 201
+        return render_template("page.html", data = numBinaryPage), 201
 
 # 0 - 1111110#
 # 1 - 0110000#
