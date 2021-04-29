@@ -65,7 +65,7 @@ def page():
 # 9 - 1110011#
 def ConvertNumToDisplay(data):
     if(data == 0):
-        return 1111110 
+        return '1111110' 
     elif(data == 1):
         return '0110000' 
     elif(data == 2):
@@ -78,10 +78,8 @@ def ConvertNumToDisplay(data):
         return '1011011' 
     elif(data == 6):
         return '1011111' 
-    elif(data == 6):
-        return '1111110' 
     elif(data == 7):
-        return '1110000'
+        return '1110000' 
     elif(data == 8):
         return '1111111'
     elif(data == 9):
