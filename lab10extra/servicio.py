@@ -35,7 +35,7 @@ def index():
             finalNumBinary = ConvertNumToDisplay(finalNum) + '1' +str(finalNum + 10)
             return jsonify({'num': str(finalNumBinary)}), 201
         else:
-            finalNumBinary = ConvertNumToDisplay(finalNum) + '0' + str(finalNum)
+            finalNumBinary = ConvertNumToDisplay(finalNum) + '0' +str(0) +str(finalNum)
             return jsonify({'num': str(finalNumBinary)}), 201
     else:
         return jsonify({'Hola':'Pablo'})
