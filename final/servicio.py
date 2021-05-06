@@ -29,8 +29,10 @@ def index():
         if (bool(data) == False ):
             return jsonify({'data':'null'})
         else:
-            return jsonify(data)
+            tempInsersion = data
             data = {}
+            return jsonify(tempInsersion)
+             
     else:
         return jsonify({'Hola':'Pablo'})
 
@@ -40,12 +42,12 @@ def page():
     if(request.method == 'POST'):
         global data,numPage
         tempData = request.form.get("finfo")
-        if(len(tempData) <= 10):
+        if(len(tempData) <= 10 and len(tempData) > 0 ):
             data['data']= tempData
             numPage = int(tempData)
             return render_template("page.html", data = numPage), 201
         else:
-            return render_template("page.html", data = 'numero mayor a 10 caracteres'), 201
+            return render_template("page.html", data = 'numero mayor a 10 caracteres o no ingreso nada'), 201
     else:
         return render_template("page.html", data = numPage), 201
 
