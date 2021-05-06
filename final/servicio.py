@@ -20,13 +20,16 @@ def index():
         global data, saveInfo,numBinaryPage
         
         #saveInfo = True
-        while True:
-            if (bool(data) != False ):
-                break
-        temp = data
-        data = {}
+        #while True:
+            #if (bool(data) != False ):
+               # break
+        #temp = data
+        #data = {}
         #saveInfo = False
-        return jsonify(temp)
+        if (bool(data) != False ):
+            return jsonify({'data':'null'})
+        else:
+            return jsonify(data)
     else:
         return jsonify({'Hola':'Pablo'})
 
