@@ -26,7 +26,7 @@ def index():
         #temp = data
         #data = {}
         #saveInfo = False
-        if (bool(data) != False ):
+        if (bool(data) == False ):
             return jsonify({'data':'null'})
         else:
             return jsonify(data)
@@ -34,7 +34,7 @@ def index():
         return jsonify({'Hola':'Pablo'})
 
 #endpoint to communicate the the web page with web service
-@app.route('/p', methods=['GET','POST'])
+@app.route('/p', methods=['GET','POST']) 
 def page():
     if(request.method == 'POST'):
         global data,numPage
