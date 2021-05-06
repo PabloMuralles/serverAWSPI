@@ -36,10 +36,12 @@ def page():
     if(request.method == 'POST'):
         global data,numPage
         tempData = request.form.get("finfo")
-        data['data']= tempData
-        numPage = int(tempData)
-        #return ('',204)
-        return render_template("page.html", data = numPage), 201
+        if(len(tempData) <= 10):
+            data['data']= tempData
+            numPage = int(tempData)
+            return render_template("page.html", data = numPage), 201
+        else:
+            return render_template("page.html", data = 'numero mayor a 10 caracteres'), 201
     else:
         return render_template("page.html", data = numPage), 201
 
