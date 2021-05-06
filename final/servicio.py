@@ -24,12 +24,13 @@ def index():
             #if (bool(data) != False ):
                # break
         #temp = data
-        #data = {}
+         
         #saveInfo = False
         if (bool(data) == False ):
             return jsonify({'data':'null'})
         else:
             return jsonify(data)
+            data = {}
     else:
         return jsonify({'Hola':'Pablo'})
 
